@@ -1,0 +1,26 @@
+monitoringEndPoints = {
+    "/api/v4/monitoring/stream_stats_enhanced":
+    [
+        {
+            "Channel/EventID":
+            [
+                "str",
+                "809aba37dec047b2972lb29b60218f90"
+            ]
+        }
+    ],
+    "/api/v4/monitoring/vod-stats":
+    [],
+    "/api/v4//monitoring/vod-stats/search":
+    [
+        {
+            "asset_ids":
+            [
+                "array",
+                "12a60a37dec047b2972lb29b60218f90,fb5791acdec047b2972lb29b60218f90"
+            ]
+        }
+    ],
+    "/api/v4/monitoring/vod-stats/owner-summary":
+    []
+}

@@ -1,0 +1,120 @@
+<!-- template.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Uplynk API Calls</title>
+        <script type="text/javascript" src="apiCallsData/monitoringEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/adsEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/assetEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/cloudSlicerEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/liveEventEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/slicerEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/ownersEndPoints.js"></script>
+        <script type="text/javascript" src="apiCallsData/crypto-js.min.js"></script>
+        <script type="text/javascript" src="apiCallsData/sjcl.js"></script>
+        <script type="text/javascript" src="apiCallsData/hmac-sha256.js"></script>
+        <script type="text/javascript" src="apiCallsData/pako.js"></script>
+        <script type="text/javascript" src="apiCallsData/accountHandling.js"></script>
+        <script type="text/javascript" src="apiCallsData/toolBox.js"></script>
+        <script type="text/javascript" src="apiCallsData/apiCalls.js"></script>
+        <link rel="stylesheet" type="text/css" href="apiCallsData/normalize.css">
+        <link rel="stylesheet" type="text/css" href="apiCallsData/apiCalls.css">
+        <link rel="stylesheet" type="text/css" href="apiCallsData/toolBox.css">
+    </head>
+
+    <body>
+        <div id=toolsDiv>
+            <select id="toolsDD">
+                <option value="date">Time</option>
+                <option value="epoch">Epoch</option>
+            </select>
+            <h3 id=toolBoxHeader>Tool Box</h3>
+            <div id="epochDiv">
+                <label class="epochLabel">Epoch</label>
+                <input class="epochInput" id="epochEpoch" type="text" placeholder="epoch (sec or ms)" name="epoch">
+                <h4 class="epochH4">Date / Time UTC</h4>
+                <label class="epochLabel">Date</label>
+                <input class="epochInput" id="epochDate" type="text" placeholder="year-month-day" name="date">
+                <label class="epochLabel">Time</label>
+                <input class="epochInput" id="epochTime" type="text" placeholder="hh:mm:ss" name="time">
+                <button id="epochConvert" type="button">Calculate</button>
+            </div>
+            <div id="timeDiv">
+                <label class="timeLabel">hh:mm:ss</label>
+                <input class="timeInput" id="timeTime" placeholder="00:10:30" name="time">   <!-- value="00:00:00 -->
+                <label class="timeLabel">hrs</label>
+                <input class="timeInput" id="timeHrs" type="number" placeholder="0.175" name="hours">
+                <label class="timeLabel">min</label>
+                <input class="timeInput" id="timeMin" type="number" placeholder="10.500" name="minutes">
+                <label class="timeLabel">sec</label>
+                <input class="timeInput" id="timeSec" type="number" placeholder="630" name="seconds">
+                <label class="timeLabel">ms</label>
+                <input class="timeInput" id="timeMs" type="number" placeholder="630000" name="milliseconds">
+                <button id="timeConvert" type="button">Calculate</button>
+            </div>
+        </div>
+        <div id="copyPlaceholderValue" class="fade-out">Insert?</div>
+        <div id="passwordCheck">
+            <div class="x2" id="closePwordCheck">
+                <p1>X</p1>
+            </div>
+            <label class="pclass" id="passwordlabel0">Enter Password to Access Keys:</label>
+            <input class="pclass" type="password" id="passwordfield0" name="passwordfield0"/>
+            <button class="pclass" type="button" id="checkPwordButton">Restore</button>
+            <label class="pclass" id="resetPwordTxt">Close Window to<br>Reset & Delete Keys</label>
+        </div>
+        <div id="passwordSave">
+            <div class="x1" id="closePwordSave">
+                <p1>X</p1>
+            </div>
+            <p id="passwordSpec">Minimum 10 Char.<br>Upper/lower, number, special</p>
+            <label class="pclass" id="passwordlabel1">Enter Password to Secure Keys:</label>
+            <input class="pclass" type="text" id="passwordfield1" name="passwordfield1"/>
+            <label class="pclass" id="passwordlabel2">Re-Enter Password:</label>
+            <input class="pclass" type="text" id="passwordfield2" name="passwordfield2"/>
+            <button class="pclass" type="button" id="savePwordButton">Save</button>
+        </div>
+        <div id='accountView'><img id="openAccountImg" src="apiCallsData/popupWindow.png" width="12px" alt="show"><p id="accountViewTxt">Add Account</p></div>
+        <div id='manageAccounts'>
+            <p id=closeManageAccountsDiv>X</p>
+            <img id='viewAccIcon' width='16em' src="apiCallsData/eye-icon_white.png">
+            <h3 id=manageAccountHeader>Manage Accounts</h3>
+            <div id='addedAccountsDiv'>
+                <form id=selectAccountsForm>
+                    <!-- <img id="showKImage" src="apiEndPointData/eye-icon_white.png" width="18px" alt="show">
+                    <img id="binImage" src="apiEndPointData/bin-icon_L_white.png" width="14px" alt="delete account"> -->
+                </form>
+                <div id="plusAccountOptDiv">
+                    <p id="plusAccount">+ Account</p>
+                    <p id="persist">save?</p>
+                </div>
+            </div>
+            <div id='addAccountDetailsDiv'>
+                <p id=closeAddAccountDetailsDiv>X</p>
+                <p class='addAccountLabels'>Description:</p>
+                <input class='addAccountInput' id='addAccountDesc' type="text" name="Description" placeholder='Dev Account'>
+                <p class='addAccountLabels'>Acc. GUID:</p>
+                <input class='addAccountInput' id='addAccountGUID' type="text" name="Description" placeholder='ba32e71e7cf16114ba6abbbd5723d1f6'>
+                <p class='addAccountLabels'>Acc. API Key:</p>
+                <input class='addAccountInput' id='addAccountAPIKEY' type="text" name="Description" placeholder='RjuRe71/JGDcGwV7PnCHg1-TxYIU9riQLT6iYpUjf'>
+                <p class='addAccountLabels'> </p>
+                <button type="button" id="addAccountButton">Add Account</button>
+            </div>
+        </div>
+
+        <h1>Uplynk API Calls</h1><div id='debug'>DEBUG<br>CONSOLE</div><select id='endPCategory'></select>
+        <div class=request>
+            <!-- <div id="requestL"> -->
+            <p class='endPoints' id='endPointLabel'>End Point:</p>
+            <select class='endPoints' id="endPoint"></select>
+            <form id="formElements">
+            </form>
+        <button type="button" id="submitButton">Submit</button>
+        <!-- <div id="callTimeStamp">Last Call: <span id="minutes"></span><span id="seconds">00</span></div> -->
+        <div id="callTimeStamp">Last Call: <span id="time">0:00:00</span></div>
+        </div>
+
+        <h2 id=responseText>Response<span id='responseSpan' style="font-weight: normal;"></span></h2>
+        <div class="response"></div>
+    </body>
+</html>
