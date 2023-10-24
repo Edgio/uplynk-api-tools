@@ -1,0 +1,74 @@
+#toolsDiv {
+    display: none;
+    z-index: 5;
+    font-size: 1em;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 18em;
+/*    height: 12.5em;*/
+    height: 16.2em;
+    background-color: #222222;
+    border: 1px solid grey;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#toolBoxHeader {
+    position: absolute;
+    display: inline-block;
+    margin: 0.6em 0em 0em 2em;
+/*    vertical-align: middle;*/
+}
+
+#toolsDD {
+    font-size: 0.9em;
+    font-family: Arial;
+    font-weight: bold;
+    width: 5.5em;
+    height: 2em;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+#epochDiv {
+    display: none;
+}
+
+.epochH4 {
+    font-size: 1em;
+    display: block;
+    text-align: left;
+    margin: 0.8em 0em 0.5em 0.6em;
+    font-weight: bold;
+}
+
+.epochLabel, .timeLabel {
+    font-size: 0.9em;
+    font-weight: bold;
+    display: inline-block;
+    width: 4.1em;
+    margin: 0em 0em 0em 0.7em;
+}
+.epochInput, .timeInput {
+    font-size: 0.9em;
+    border: 1px solid #BBBBBB;
+    background-color: rgba(0, 30, 40, 1.0);
+    color: grey;
+    font-weight: bold;
+    display: inline-block;
+    width: 12em;
+    text-align: right;
+    margin: 0.1em 0em 0.1em 1em;
+    letter-spacing: 0.08em;
+}
+#timeDiv {
+    display: block;
+}
+
+#timeConvert, #epochConvert {
+    font-size: 1em;
+    margin: 0.8em 0em 0em 5.5em;
+    padding: 0;
+    width: 6em;
+    height: 1.6em;
+}

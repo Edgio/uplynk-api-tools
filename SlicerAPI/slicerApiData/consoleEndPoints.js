@@ -1,0 +1,141 @@
+consoleEndPoints = {
+    "state":
+    [],
+    "status":
+    [],
+    "quality":
+    [],
+    "content_start":
+    [
+        {
+            "title":
+            [
+                "str",
+                "newAssetTitle"
+            ]
+        },
+        {
+            "external_id":
+            [
+                "",
+                ""
+            ]
+        },
+        {
+            "meta":
+            [
+                "",
+                ""
+            ]
+        },
+        {
+            "offset_from_now_ms":
+            [
+                "int",
+                "2000 (milliseconds - relative to now"
+            ]
+        },
+        {
+            "offset_time_ms":
+            [
+                "int",
+                "10000 (milliseconds - relative to start asset)"
+            ]
+        },
+        {
+            "start_timecode":
+            [
+                "str",
+                "00:15:02;01  (time basd on Live Slicer Local Time)"
+            ]
+        }
+    ],
+    "blackout":
+    [
+        {
+            "offset_from_now_ms":
+            [
+                "int",
+                "2000 (milliseconds - relative to now"
+            ]
+        },
+        {
+            "offset_time_ms":
+            [
+                "int",
+                "10000 (milliseconds - relative to start asset)"
+            ]
+        },
+        {
+            "start_timecode":
+            [
+                "str",
+                "00:15:02;01  (time basd on Live Slicer Local Time)"
+            ]
+        }
+    ],
+    "replace_content":
+    [
+        {
+            "DURATION":
+            [
+                "int",
+                "15.528"
+            ]
+        },
+        {
+            "REPLACEMENTS":
+            [
+                "list",
+                "\"replacements\": [{\"external_id\": \"asdf1234\",\"duration\": 104.2}"
+            ]
+        },
+        {
+            "offset_from_now_ms":
+            [
+                "int",
+                "(time relative to now)"
+            ]
+        },
+        {
+            "offset_time_ms":
+            [
+                "int",
+                "(time relative to the start of the current asset)"
+            ]
+        },
+        {
+            "start_timecode":
+            [
+                "str",
+                "00:15:02;01  (time basd on Live Slicer Local Time)"
+            ]
+        }
+    ],
+    "restart_later":
+    [
+        {
+            "offset_from_now_ms":
+            [
+                "int",
+                "2000 (milliseconds - relative to now"
+            ]
+        },
+        {
+            "offset_time_ms":
+            [
+                "int",
+                "10000 (milliseconds - relative to start asset)"
+            ]
+        },
+        {
+            "start_timecode":
+            [
+                "str",
+                "00:15:21;09"
+            ]
+        }
+    ],
+    "server_time":
+    []
+}

@@ -1,0 +1,535 @@
+body {
+/*    border: 1px dashed green;*/
+    width: 70em;
+    background-color: #333;
+    color: #ccc;
+    font-family: Arial;
+    font-size: 13px;
+    margin: 0 auto;
+    line-height: 1.53em;
+    overflow-y: scroll;
+}
+#horzLine {
+  border: none;
+  border-top: 1px solid grey; /* Change the color to your desired color */
+/*  height: 1px;*/
+}
+
+h1 {
+    width: 6em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0em 0em 0em 0em;
+    margin-top: -0.3em;
+    margin-bottom: 0.6em;
+    font-size: 22px;
+}
+
+.x1, .x2, .x3 {
+    cursor: pointer;
+    font-size: 1.3em;
+    position: absolute;
+    top: -0.2em;
+    right: 0;
+    padding: 0.4em 0.2em 0.2em 0.2em;
+    width: px;
+    height: 70px;
+}
+
+:root {     /*  CREATES THE VARIABLES AS GLOBAL VARIABLES  */
+    --pulse-length: 2.5s;
+    --pulse-color-1: #222;
+    --pulse-color-2: #770000;
+}
+
+#accountView {
+/*    position: absolute;*/
+    float: right;
+    display: inline;
+    width: 10em;
+    border: 0.1em solid #777;
+    margin-right: -0.2em;
+    margin-top: -0.1em;
+    padding: 0.4em 0em 0.4em 0em;
+    text-align: center;
+    cursor: pointer;
+    animation: pulse var(--pulse-length) infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: var(--pulse-color-1);
+    }
+    50% {
+        background-color: var(--pulse-color-2);
+    }
+    100% {
+        background-color: var(--pulse-color-1);
+    }
+}
+
+h3 {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 0em 0em 0em 0em;
+}
+
+/*#debug {
+    text-align: center;
+    padding: 2px 0px 0px 5px;
+    position: absolute;
+    border: 1px dashed grey;
+    margin: 2.4em 0em 0em 59em;
+    width: 19em;
+    height: 3.1em;
+    background-color: #333;
+    overflow: hidden;
+    font-size: 10px;
+    line-height: 1.5em;
+    cursor: pointer;
+}*/
+
+#endPCategory {
+    font-weight: bold;
+    display: block;
+    height: 2.6em;
+    margin: 0.4em 0em 0em 0em;
+    padding: 0em 0em 0em 0.3em;
+    position: absolute;
+    width: 9.7em;
+    background-color: #205;
+    color: #DDDDDD;
+    border: 1px solid #999999;
+}
+
+label {
+/*    border: 1px dashed yellow;*/
+/*    display: inline;*/
+/*    margin: 0 auto;*/
+/*    margin: 8px;*/
+    margin: 0.615em 0.615em 0.615em 1em;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+select {
+    vertical-align: middle;
+    margin: 0em 0em 0em 0em;
+    padding: 0em 0.38em 0.45em 0.38em;
+}
+
+input {
+    letter-spacing: 0.09em;
+    vertical-align: middle;
+    margin: 0.615em 0.615em 0.615em 0.6em;
+    padding: 0.38em;
+}
+textarea {
+    font-family: Arial;
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+    margin: 0.615em 0.615em 0.615em 0.615em;
+    padding: 0.55em 0.38em 0.13em 0.38em;
+    resize: none;
+    height: 1em;
+}
+
+#endPointLabel {
+    width: 5.7em;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 11.3em;
+    padding-right: 0.71em;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#endPoint {
+    height: 2.6em;
+    display: block;
+    width: 23.5em;
+/*    margin-top: 0;*/
+/*    margin-right: 7.7em;*/
+    background-color: #EEEEEE;
+}
+
+#consoleDiv {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0em 0em 0em 0em;
+}
+
+#consoleDiv {
+    padding-top: 0;
+}
+
+#consoleDiv ._chckBxLabls {
+    display: inline-block;
+    margin: 0em 0em 0em 1.3em;
+}
+
+#statsDivs {
+    width: 100%;
+    position: relative;
+}
+#statsDiv0, #statsDiv1 {
+    width: 100%;
+    display: inline-block;
+}
+#statsDiv1 {
+    display: none;
+    float: right;
+}
+
+._statsEncoderLabel {
+    display: none;
+    position: absolute;
+    margin-top: 0.6em;
+/*    width: 100%;*/
+    text-align: center;
+}
+
+#statsOptions {
+    width: 100%;
+    margin: 0.4em 0em 0.2em 0em;
+}
+
+._statsLabel {
+    padding-left: 1em;
+}
+._statsLabel, ._statsValue {
+    width: 40%;
+    margin: 0.6em 0em 0em 0em;
+}
+
+#intervalCheck {
+    margin: 0.1em 0.8em 0.2em 0.6em;
+/*    height: 1.4em;*/
+    padding: 0.2em 0em 0.2em 0em;
+    text-align: center;
+    background-color: #205;
+    font-weight: bold;
+    color: #ccc;
+    border: 1px solid #AAA;
+}
+#refreshClock {
+    position: absolute;
+    right: 0;
+    margin: 0.9em 0.7em 0em 0em;
+}
+
+._sectionHeader {
+    display: inline-block;
+/*    position: relative;*/
+    width: 100%;
+    text-align: center;
+    padding: 0.6em 0em 0.6em 0.8em;
+    font-size: 1.3em;
+    background-color: black;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+
+._encoderLabel {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0.6em 0em 0.4em 0em;
+    border-bottom: 1px solid grey;
+    padding-left: 0.8em;
+    padding-bottom: 0.8em;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+._stateResponse {
+    display: inline-block;
+}
+
+#advancedTools {
+    display: none;
+}
+
+.argLabelInt {
+    display: inline-block;
+    width: 7em;
+    word-break: break-all;
+}
+
+.argLabel {
+    display: inline-block;
+    width: 7em;
+    word-break: break-all;
+}
+
+.argDD {
+    font-size: 11px;
+    display: inline-block;
+    width: 10.29em;
+    padding: 0.3em 0em 0.3em 0em;
+/*    height: 1.2em;*/
+    font-weight: bold;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+.argInputField {
+    display: inline-block;
+    width: 22em;
+    height: 1em;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+.argTextArea {
+    display: inline-block;
+    font-size: 0.9em;
+    width: 46.3em;
+    height: 1em;
+    padding: 0.8em 0em 0.8em 0.2em;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+#manualRefresh {
+    position: absolute;
+    width: 10em;
+    margin: 0.9em 0.6em 0.6em 0.6em;
+    padding: 3px 20px 3px 20px;
+    font-weight: bold;
+    border: none;
+}
+._triggerResponse {
+    margin: 0em 0em 0em 0.6em;
+    font-size: 1.2em;
+    display: inline-block;
+    width: 40em;
+}
+
+#timeSinceCall {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    margin: 0.9em 0.6em 0em 0em;
+}
+
+#epochConverter {
+/*    float: right;*/
+}
+
+.response {
+    margin-top: 5px;
+    margin-left: 0em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#responseText {
+    padding: 3px;
+    text-align: center;
+/*    border: 1px solid blue;*/
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+#responseSpan {
+    padding: 3px;
+    vertical-align: top;
+}
+
+#specialTxt {
+    font-weight: bold;
+    color: #EEEEEE;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+    margin: 0;
+}
+
+/* TABLE FORMATTING // */
+[class*="Table"] td {
+    font-family: Arial;
+    font-size: 14px;
+}
+
+[class*="Table"] {
+    border: 1px solid #777;
+    margin-bottom: 0.4em;
+}
+
+._encoderTable th {
+    font-size: 17px;
+    text-align: center;
+    padding: 0.6em 0em 0.6em 0.3em;
+}
+
+[class*="Table"]  {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+    border-spacing: 0;
+    box-sizing: border-box;   /*  'box-sizing: border-box' modifies the default CSS box model used to calculate width & height of elements - It includes the padding and border in the total width and height of an element  */
+    word-break: break-all;
+}
+._Table:last-child {
+    padding-bottom: 3em;
+}
+
+._encoderTable {
+    width: 100%;
+    margin-bottom: 0.8em;
+}
+
+._HeaderRow, ._encoderHeaderRow  {
+    background-color: black;
+    font-weight: bold;
+}
+
+._HeaderRow, ._encoderHeaderRow, ._encoderRow, ._Row, ._innerRow {
+    border-bottom: 1px solid #777;
+}
+
+._HeaderRow, ._Row {
+    width: 100%;
+}
+._encoderRow:first-child {
+    background-color: #222;
+    font-weight: bold;
+}
+
+._Row:nth-child(even) {
+    background-color: #444;
+}
+._innerRow:nth-child(even) {
+    background-color: #444;
+}
+
+._HeaderKey, ._encoderKey, ._Key, ._innerKey {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    border-right: 1px solid #777;
+}
+._encoderKey, ._srcEncoderKey {
+    border-right: none;
+}
+
+._srcEncoderKey {
+    width: 20%;
+    padding: 0em 0em 0em 0em;
+
+}
+#primSecDD {
+    width: 99%;
+    margin-left: 1px;
+    height: 100%;
+    border: none;
+    padding: 0.3em 0em 0.3em 0.4em;
+    font-weight: bold;
+    background-color: #222;
+    color: #ccc;
+}
+._encoderKey {
+    width: 20%;
+    font-size: 1.3em;
+    padding: 0.6em 0em 0.6em 0em;
+    text-align: center;
+}
+._srcEncoderVal {
+    font-size: 13px;
+    word-break: break-all;
+    text-align: center;
+    border-left: 1px solid #777;
+    padding: 0.2em 0em 0.2em 0em;
+/*    cursor: pointer;*/
+}
+#contentStartButton, #blackoutButton {
+    background-color: #205;
+    cursor: pointer;
+    text-align: center;
+    padding-left: 0;
+}
+
+._Key, ._innerKey {
+    width: 35%;
+    max-width: 5em;
+}
+
+._Val, ._encoderVal, ._innerVal {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+/*    width: 80%;*/
+}
+._encoderVal {
+    width: 40%;
+    border-left: 1px solid #777;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    word-break: break-all;
+    position: relative;
+    vertical-align: middle;
+}
+
+._Val ._Row {
+    border: none;
+    padding-left: 16px;
+}
+
+._innerTable tr:last-child {
+    border-bottom: none;
+}
+
+/* SPECIAL OPTIONS */
+.clickable-option {
+    padding: 0em 0.4em 0.2em 0.4em;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+/*    bottom: 0;*/
+    right: 0;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.clickable-option2 {
+    margin-top: -0.25em;
+    margin-left: 0.3em;
+    padding: 0.2em 0.7em 0.2em 0.6em;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+/*    top: 0;*/
+    left: 0;
+    cursor: pointer;
+    font-style: normal;
+    border: 1px solid #777;
+    background-color: #205;
+}
+
+#ApiKeyVal {
+    cursor: default;
+}
+
+._stateClock {
+    font-size: 11px;
+    position: absolute;
+    font-style: normal;
+    bottom: 0;
+    right: 0;
+    margin: 0em 0.4em 0.1em 0em;
+    font-weight: normal;
+}
