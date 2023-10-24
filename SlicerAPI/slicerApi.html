@@ -1,0 +1,92 @@
+<!-- template.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slicer API</title>
+        <script type="text/javascript" src="slicerApiData/consoleEndPoints.js"></script>
+        <script type="text/javascript" src="slicerApiData/crypto-js.min.js"></script>
+        <script type="text/javascript" src="slicerApiData/sjcl.js"></script>
+        <script type="text/javascript" src="slicerApiData/hmac-sha256.js"></script>
+        <script type="text/javascript" src="slicerApiData/pako.js"></script>
+        <link rel="stylesheet" type="text/css" href="slicerApiData/slicerApi.css">
+        <script type="text/javascript" src="slicerApiData/slicerApi.js"></script>
+    </head>
+
+    <body>
+        <select id='endPCategory'>
+            <option value='triggerActive'>Triggers</option>
+            <option value='statsOnly'>Stats Only</option>
+        </select><br>
+        <h1>Slicer API</h1>
+        <div id=consoleDiv>
+<!--    CONTROLLER SECTION      -->
+            <div id="timeSinceCall">last: <span id="time">0:00:00</span></div>
+            <table class="_encoderTable"><tbody>
+                <tr class="_encoderHeaderRow">
+                    <th class="_encoderHeaderKey" colspan="3" style="position: relative;"><i class="clickable-option2" id="apiKeyButton" >+ API Key :<i  id="ApiKeyVal"></i></i>Encoder Controller</th>
+                </tr></tbody>
+                <tr class="_encoderRow">
+                    <td class="_srcEncoderKey" style="position: relative;"><!--<i class="clickable-option">>></i>-Primary-->
+                        <select id="primSecDD">
+                            <option>Primary Only</option>
+                            <option>Secondary Only</option>
+                            <option>Primary & Secondary</option>
+                        </select>
+                    </td>
+                    <td class="_srcEncoderVal" encoder="encoder0" style="position: relative;"><i class="clickable-option">+</i>Primary</td>
+                    <td class="_srcEncoderVal" encoder="encoder1" style="position: relative;"><i class="clickable-option">+</i>Secondary</td>
+                </tr>
+                <tr class="_encoderRow" id="currentState">
+                    <td class="_encoderKey">Current State&nbsp&nbsp</td>
+                    <td class="_encoderVal" id="encoder0"></td>
+                    <td class="_encoderVal" id="encoder1"></td>
+                </tr>
+                <tr class="_encoderRow" id="contentStartTrigger">
+                    <td class="_encoderKey" style="position: relative;" id="contentStartButton"><i class="clickable-option">></i>Content Start&nbsp&nbsp</td>
+                    <td class="_encoderVal _primEncoderVal" id="cstartResult0"></td>
+                    <td class="_encoderVal _secEncoderVal" id="cstartResult1"></td>
+                </tr>
+                <tr class="_encoderRow" id="blackoutTrigger">
+                    <td class="_encoderKey" style="position: relative;" id="blackoutButton"><i class="clickable-option">></i>Blackout&nbsp&nbsp<i class="clickable-option"></i></td>
+                    <td class="_encoderVal _primEncoderVal" id="blckOutResult0"></td>
+                    <td class="_encoderVal _secEncoderVal" id="blckOutResult1"></td>
+                </tr>
+            </table>
+<!--    STATISTICS SECTION      -->
+            <button type="button" id="manualRefresh">Refresh</button>
+            <p id="refreshClock"></p>
+            <h3 class="_sectionHeader">Statistics</h3>
+<!--    STATS OPTIONS SECTION      -->
+                <div id="statsOptions">
+                    <label class="_chckBxLabls">Interval:</label>
+                        <select id="intervalCheck">
+                            <option>manual</option>
+                            <option>15 sec</option>
+                            <option>30 sec</option>
+                            <option>60 sec</option>
+                            <option>120 sec</option>
+                        </select>
+                    <label class="_chckBxLabls">State:</label>
+                    <input class="_checkbox" type="checkbox" checked id="stateTable" name="stateCall" value="stateCall">
+                    <label class="_chckBxLabls">Audio / Visual:</label>
+                    <input class="_checkbox" type="checkbox" checked id="imageSoundTable" name="imageSoundTable" value="imageSoundTable">
+                    <label class="_chckBxLabls">Time:</label>
+                    <input class="_checkbox" type="checkbox" checked id="timeTable" name="timeTable" value="timeTable">
+                    <label class="_chckBxLabls">Frame:</label>
+                    <input class="_checkbox" type="checkbox" checked id="frameTable" name="frameTable" value="frameTable">
+                    <label class="_chckBxLabls">Slices:</label>
+                    <input class="_checkbox" type="checkbox" checked id="sliceProcessingTable" name="sliceProcessingTable" value="sliceProcessingTable">
+                    <label class="_chckBxLabls">Connect:</label>
+                    <input class="_checkbox" type="checkbox" checked id="connectionTable" name="connectionTable" value="connectionTable">
+                    <label class="_chckBxLabls">Misc:</label>
+                    <input class="_checkbox" type="checkbox" checked id="miscTable" name="miscTable" value="miscTable">
+<!--                     <label class="_chckBxLabls">Quality:</label>
+                    <input class="_checkbox" type="checkbox" checked id="qualityTable" name="qualityTable" value="qualityTable"> -->
+                </div>
+        </div>
+        <div id="statsDivs">
+            <div id="statsDiv0"><h3 class="_statsEncoderLabel" id="statsPrimary">Primary</h3></div>
+            <div id="statsDiv1"><h3 class="_statsEncoderLabel" id="statsSecondary">Secondary</h3></div>
+        </div>
+    </body>
+</html>
